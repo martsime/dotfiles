@@ -82,10 +82,19 @@ source /usr/local/bin/virtualenvwrapper.sh
 export PYENV_ROOT=$HOME/.pyenv
 export PATH="$PYENV_ROOT/bin:$PATH"
 
+# Vim
+export VIM="" # This is needed for python host to load correctly in nvim
+
+# Fzf
+export FZF_DEFAULT_COMMAND='rg --smart-case --files --hidden --follow --glob "!.git/*"'
+
 # Nodejs version manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Git
+export GIT_EDITOR="nvim"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -112,7 +121,8 @@ export NVM_DIR="$HOME/.nvm"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-# zsh
+#
+# Zsh
 alias zshconf="vim ~/.zshrc"
 alias sz="source ~/.zshrc"
 
@@ -120,6 +130,10 @@ alias sz="source ~/.zshrc"
 alias vim="nvim"
 alias vimconf="vim ~/.config/nvim/init.vim"
 
-
+# Tmux
+alias tma="tmux a -t"
+alias tmn="tmux new -s"
+alias tml="tmux ls"
+alias tmk="tmux kill-session -t"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

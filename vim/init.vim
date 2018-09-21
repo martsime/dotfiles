@@ -9,12 +9,14 @@ call plug#begin('~/.config/nvim/plugged')
 " Visual
 Plug 'flazz/vim-colorschemes' " Colorschemes
 Plug 'itchyny/lightline.vim' " Ligthline statusline
+Plug 'w0rp/ale' " Asynchronous lint engine
 
 " Navigation
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy file searching
 Plug 'junegunn/fzf.vim' " Asynchronous file/tag search
 Plug 'francoiscabrol/ranger.vim' " Use ranger as a file explorer
 Plug 'rbgrouleff/bclose.vim' " Dependency of ranger.vim
+Plug 'christoomey/vim-tmux-navigator' " Navigate between tmux and vim with <C>+hjkl
 
 " Editing
 Plug 'tpope/vim-commentary' " Changes to comment with 'gc'
@@ -26,6 +28,18 @@ Plug 'prettier/vim-prettier', {
 " Git
 Plug 'airblade/vim-gitgutter' " Show git diff in number column
 Plug 'jreybert/vimagit' " Modal git editing with <leader>g
+
+" Auto-completion
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Asynchronous completion framework for neovim
+Plug 'zchee/deoplete-jedi' " Jedi as a completion source for deoplete
+
+" Tools
+Plug 'ludovicchabant/vim-gutentags' " Automatically create ctag files
+
+" Language Server Protocol
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh' }
 
 call plug#end()
 
@@ -89,6 +103,9 @@ set expandtab
 " Smartwrapping of overflowing text is indented correctly
 set breakindent
 
+" Indent size for js files
+autocmd Filetype javascript setlocal ts=2 sw=2 sts=0 expandtab
+
 
 """ KEYBINDINGS
 
@@ -120,6 +137,12 @@ nnoremap <silent> <leader>v :vsp<CR>
 set lazyredraw
 
 
+""" PYTHON
+" Python paths for current python project. Used by Jedi-vim
+let g:python_host_prog = '/home/martsime/.virtualenvs/neovim2/bin/python'
+let g:python3_host_prog = '/home/martsime/.virtualenvs/neovim3/bin/python'
+
+
 """ PLUGINS
 
 "" Vimagit
@@ -139,6 +162,21 @@ nnoremap <silent> <leader><space> :Files<CR>
 " All tags in project
 nnoremap <silent> <leader>t :Tags<CR>
 
+" Grep content of all files
+nnoremap <silent> <leader>/ :Find<CR>
+
+" --column: Show column number
+" --line-number: Show line number
+" --no-heading: Do not show file headings in results
+" --fixed-strings: Search term as a literal string
+" --ignore-case: Case insensitive search
+" --no-ignore: Do not respect .gitignore, etc...
+" --hidden: Search hidden files and folders
+" --follow: Follow symlinks
+" --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+" --color: Search color options
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+
 
 "" Ranger.vim
 let g:ranger_map_keys = 0
@@ -154,3 +192,63 @@ nnoremap <silent> <leader>a :ArgWrap<Cr>
 let g:argwrap_tail_comma = 1
 
 
+"" Ale
+let g:ale_fixers = {
+    \ 'javascript': ['eslint'], }
+
+
+"" Deoplete
+let g:deoplete#enable_at_startup = 1
+
+
+"" Gutentags
+let g:gutentags_file_list_command = 'rg --files'
+
+
+"" Gitgutter
+
+" Remaps
+nmap <leader>ga <Plug>GitGutterStageHunk
+nmap <leader>gu <Plug>GitGutterUndoHunk
+
+" Update sign in column every 200 ms
+set updatetime=200
+
+"" LanguageClient-neovim
+let g:LanguageClient_serverCommands = {
+    \ 'haskell': ['hie', '--lsp'],
+    \ 'html': ['html-languageserver', '--stdio'],
+    \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['javascript-typescript-stdio'],
+    \ 'python' : ['pyls'],
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ 'sh': ['bash-language-server', 'start']
+    \ }
+
+" Automatically start language servers.
+let g:LanguageClient_autoStart = 1
+
+" Show documentation for method
+nnoremap <silent> <Leader>K :call LanguageClient_textDocument_hover()<CR>
+
+" Go to definition
+nnoremap <silent> <Leader>d :call LanguageClient_textDocument_definition()<CR>
+
+" Show short type and doc information
+nnoremap <silent> <Leader>D :call LanguageClient_textDocument_hover()<CR>
+
+" Rename identifier
+nnoremap <silent> <Leader>r :call LanguageClient_textDocument_rename()<CR>
+
+" Search symbols in current buffer
+nnoremap <silent> <Leader>s :call LanguageClient_textDocument_documentSymbol()<CR>
+
+" Show a list of all references to identifier under cursor
+" Does not seem to work for python-language-server
+nnoremap <silent> <Leader>R :call LanguageClient_textDocument_references()<CR>
+
+" Format the entire buffer
+nnoremap <silent> <Leader>F :call LanguageClient_textDocument_formatting()<CR>
+
+" Use LanguageClient for gq formatting
+set formatexpr=LanguageClient#textDocument_rangeFormatting_sync()
