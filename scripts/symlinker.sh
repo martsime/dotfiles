@@ -1,10 +1,18 @@
 #!/bin/bash
 
-# Assumes this scripts is in a subfolder of the dotfile repo
+# Assumes this script is in a subfolder of the dotfile repo
 SCRIPTPATH="$(dirname $0)"
 export DOTREPO="$(cd $SCRIPTPATH && cd .. && pwd -P)"
 
-echo -e "\nSymlinking config directory\n"
+# Glob hidden files
+shopt -s dotglob
+
+# Symlink all dotfiles in home directory
+echo -e "\nSymlinking dotfiles in home directory"
+ln -svf $DOTREPO/home/* $HOME/
+
+# Symlink the whole config directory
+echo -e "\nSymlinking config directory"
 
 if [ "$HOME/.config" -ef "$DOTREPO/config" ]
 then
