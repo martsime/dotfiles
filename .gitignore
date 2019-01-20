@@ -1,0 +1,14 @@
+# Vim swap files
+*.swp
+
+# ctag files
+tags
+
+# nvim generated files
+config/nvim/plugged
+config/nvim/.netrwhist
+
+# SSH
+home/.ssh
+!home/.ssh/config
+
