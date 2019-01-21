@@ -1,8 +1,7 @@
 #!/bin/bash
 
-# Assumes this script is in a subfolder of the dotfile repo
-SCRIPTPATH="$(dirname $0)"
-export DOTREPO="$(cd $SCRIPTPATH && cd .. && pwd -P)"
+# Assumes the parent directory is the dotrepo
+export DOTREPO="$HOME/.dotfiles"
 
 # Glob hidden files
 shopt -s dotglob
