@@ -12,3 +12,6 @@ config/nvim/.netrwhist
 home/.ssh
 !home/.ssh/config
 
+# ZSH
+config/oh-my-zsh
+
