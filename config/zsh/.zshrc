@@ -4,30 +4,30 @@ export PATH=/usr/local/bin:/usr/bin:/bin
 # Add all scripts from dotfiles to path
 export PATH="$PATH:$DOTREPO/tools"
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+# ----------------- OH-MY-ZSH ----------------- 
+# Path to oh-my-zsh
+export ZSH=$XDG_CONFIG_HOME/oh-my-zsh
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+# Set theme with oh-my-zsh
+export ZSH_THEME="agnoster"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
+# Set plugins 
 plugins=(
   git
 )
 
+# Install oh-my-zsh if its not installed
+if [[ ! -d "$ZSH" ]]; then
+    echo "Installing oh-my-zsh..."
+
+    git clone git@github.com:robbyrussell/oh-my-zsh.git $ZSH
+    echo "Done installing oh-my-zsh."
+fi
+
+# Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
-export PATH=/usr/local/bin:/usr/bin:/bin
-
-# USER CONFIGURATION
+# ----------------- USER CONFIGURATION ----------------- 
 
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
@@ -52,32 +52,7 @@ export NVM_DIR="$HOME/.nvm"
 # Git
 export GIT_EDITOR="nvim"
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-#
+# ----------------- ALIASES ----------------- 
 # Zsh
 alias zshconf="vim ~/.zshrc"
 alias sz="source ~/.zshrc"
