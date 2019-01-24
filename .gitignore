@@ -14,4 +14,4 @@ home/.ssh
 
 # ZSH
 config/oh-my-zsh
-
+config/zsh/.zcompdump*
