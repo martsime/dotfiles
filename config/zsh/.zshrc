@@ -67,4 +67,9 @@ alias tmn="tmux new -s"
 alias tml="tmux ls"
 alias tmk="tmux kill-session -t"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Start Xorg on Arch
+if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
+    exec startx
+fi
