@@ -57,6 +57,9 @@ set background=dark
 " Set colorscheme
 colorscheme gruvbox
 
+" Remove background
+hi! Normal ctermbg=NONE guibg=NONE
+
 " Show line numbers
 set number
 
