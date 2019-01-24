@@ -26,6 +26,17 @@ bindsym $mod+d exec dmenu_run
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+for_window [class="^.*"] border pixel 2
+gaps inner 8
+gaps outer 2
+
+# #---Start External Scripts---# #
+
+# Composite manager
+exec --no-startup-id xcompmgr
+# Set the backround
+exec --no-startup-id setbg
+
 # set primary gruvbox colorscheme colors
 set $bg #282828
 set $red #cc241d
