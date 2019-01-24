@@ -10,6 +10,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'flazz/vim-colorschemes' " Colorschemes
 Plug 'itchyny/lightline.vim' " Ligthline statusline
 Plug 'w0rp/ale' " Asynchronous lint engine
+Plug 'lilydjwg/colorizer' " Color previewer
 
 " Navigation
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy file searching
