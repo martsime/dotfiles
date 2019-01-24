@@ -13,6 +13,9 @@ fi
 # Swap ctrl key with caps lock
 setxkbmap -option ctrl:swapcaps
 
+# Swap left alt with super
+setxkbmap -option altwin:swap_alt_win
+
 # Key repeat delay / rate in ms
 xset r rate 200 25
 
