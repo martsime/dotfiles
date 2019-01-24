@@ -18,16 +18,16 @@ window:
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
   dimensions:
-    columns: 80
-    lines: 40
+    columns: 0
+    lines: 0
 
   # Window padding (changes require restart)
   #
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 0
-    y: 0
+    x: 2
+    y: 2
 
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: false
@@ -92,24 +92,27 @@ tabspaces: 8
 font:
   # Normal (roman) font face
   normal:
-    family: Source Code Pro for Powerline
+    # family: Source Code Pro for Powerline
+    family: DejaVu Sans Mono
     # The `style` can be specified to pick a specific face.
     #style: Regular
 
   # Bold font face
   bold:
-    family: Source Code Pro for Powerline
+    # family: Source Code Pro for Powerline
+    family: DejaVu Sans Mono
     # The `style` can be specified to pick a specific face.
     #style: Bold
 
   # Italic font face
   italic:
-    family: Source Code Pro for Powerline
+    # family: Source Code Pro for Powerline
+    family: DejaVu Sans Mono
     # The `style` can be specified to pick a specific face.
     #style: Italic
 
   # Point size
-  size: 8.0
+  size: 12.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.

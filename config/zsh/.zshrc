@@ -52,6 +52,9 @@ export NVM_DIR="$HOME/.nvm"
 # Git
 export GIT_EDITOR="nvim"
 
+#Fix font scaling for alacritty
+export WINIT_HIDPI_FACTOR=1
+
 # ----------------- ALIASES ----------------- 
 # Zsh
 alias zshconf="vim ~/.zshrc"
