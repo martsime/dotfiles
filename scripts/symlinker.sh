@@ -1,23 +1,26 @@
 #!/bin/bash
+# Script to symlink home directory and config files
 
-# Assumes the parent directory is the dotrepo
-export DOTREPO="$HOME/.dotfiles"
+if [[ -z "$DOTREPO" ]]; then
+    echo "ERROR: Failed to symlink. Env variable DOTREPO is not set."
+    exit 1
+fi
 
 # Glob hidden files
 shopt -s dotglob
 
 # Symlink all dotfiles in home directory
-echo -e "\nSymlinking dotfiles in home directory"
-ln -svf $DOTREPO/home/* $HOME/
+echo -e "Symlinking dotfiles in home directory"
+ln -svf $DOTREPO/home/* $HOME
 
-# Symlink the whole config directory
-echo -e "\nSymlinking config directory"
+# Symlink the config directory
+echo -e "Symlinking config directory"
 
 if [ "$HOME/.config" -ef "$DOTREPO/config" ]
 then
-    echo -e "\"$HOME/.config\" is already symlinked"
+    echo -e "\"~/.config\" is already symlinked"
 else
-    echo -e "\"$HOME/.config\" has not been symlinked yet"
+    echo -e "\"~/.config\" has not been symlinked yet"
    
     while true; do
 
@@ -31,6 +34,7 @@ else
 	    then
 	        # If $HOME.config already exist, keep a backup
 	        mv $HOME/.config $HOME/.old-config
+            echo -e "Already existing \"~/.config\" is moved to \"~/.old-config\""
 	    fi
 	
 	    # Symlink $HOME/.config to the dotfile config
