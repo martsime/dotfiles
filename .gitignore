@@ -15,3 +15,6 @@ home/.ssh
 # ZSH
 config/oh-my-zsh
 config/zsh/.zcompdump*
+
+# Mac OS
+*.DS_Store
