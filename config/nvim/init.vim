@@ -59,7 +59,7 @@ set background=dark
 colorscheme gruvbox
 
 " Remove background
-hi! Normal ctermbg=NONE guibg=NONE
+" hi! Normal ctermbg=NONE guibg=NONE
 
 " Show line numbers
 set number
@@ -143,8 +143,8 @@ set lazyredraw
 
 """ PYTHON
 " Python paths for current python project. Used by Jedi-vim
-let g:python_host_prog = '/home/martsime/.virtualenvs/neovim2/bin/python'
-let g:python3_host_prog = '/home/martsime/.virtualenvs/neovim3/bin/python'
+let g:python_host_prog = $HOME.'/.virtualenvs/neovim2/bin/python'
+let g:python3_host_prog = $HOME.'/.virtualenvs/neovim3/bin/python'
 
 
 """ PLUGINS
@@ -252,7 +252,7 @@ nnoremap <silent> <Leader>s :call LanguageClient_textDocument_documentSymbol()<C
 nnoremap <silent> <Leader>R :call LanguageClient_textDocument_references()<CR>
 
 " Format the entire buffer
-nnoremap <silent> <Leader>F :call LanguageClient_textDocument_formatting()<CR>
+" nnoremap <silent> <Leader>F :call LanguageClient_textDocument_formatting()<CR>
 
 " Use LanguageClient for gq formatting
 set formatexpr=LanguageClient#textDocument_rangeFormatting_sync()
