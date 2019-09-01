@@ -64,24 +64,6 @@ export NVM_DIR="$HOME/.nvm"
 # Git
 export GIT_EDITOR="nvim"
 
-#Fix font scaling for alacritty
-export WINIT_HIDPI_FACTOR=1
-
-# ----------------- ALIASES ----------------- 
-# Zsh
-alias zshconf="vim ~/.zshrc"
-alias sz="source ~/.zshrc"
-
-# Vim
-alias vim="nvim"
-alias vimconf="vim ~/.config/nvim/init.vim"
-
-# Tmux
-alias tma="tmux a -t"
-alias tmn="tmux new -s"
-alias tml="tmux ls"
-alias tmk="tmux kill-session -t"
-
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Start Xorg on Arch
