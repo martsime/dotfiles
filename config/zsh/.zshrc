@@ -30,6 +30,15 @@ source "$ZPLUG_HOME/init.zsh"
 # Load plugins
 zplug load
 
+# ----------------- CUSTOM ZSH SCRIPTS -----------------
+# Directory with all custom scripts to be autoloaded
+AUTOLOAD="$DOTREPO/autoload"
+
+# Source all files in $AUTOLOAD with file extensions .zsh
+for file in $AUTOLOAD/*.zsh; do
+    source "$file"
+done
+
 # ----------------- USER CONFIGURATION ----------------- 
 
 # Virtualenvwrapper
