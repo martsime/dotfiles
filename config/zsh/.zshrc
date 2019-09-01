@@ -4,35 +4,38 @@ export PATH=/usr/local/bin:/usr/bin:/bin
 # Add all scripts from dotfiles to path
 export PATH="$PATH:$DOTREPO/tools"
 
-# ----------------- OH-MY-ZSH ----------------- 
-# Path to oh-my-zsh
-export ZSH=$XDG_CONFIG_HOME/oh-my-zsh
+# ----------------- ZPLUG -----------------
+# Path to zplug
+export ZPLUG_HOME=$XDG_CONFIG_HOME/zplug
 
-# Set theme with oh-my-zsh
-export ZSH_THEME="agnoster"
+# Cache zplug plugins in order to improve zsh startup time
+export ZPLUG_USE_CACHE=true
 
-# Set plugins 
-plugins=(
-  git
-)
+# Load zplug packages from the following path
+export ZPLUG_LOADFILE="$DOTREPO/scripts/packages.zplug"
 
-# Install oh-my-zsh if its not installed
-if [[ ! -d "$ZSH" ]]; then
-    echo "Installing oh-my-zsh..."
+# Check if zplug is installed
+if [[ ! -d $ZPLUG_HOME ]]; then
+    echo "Installing zplug..."
 
-    git clone git@github.com:robbyrussell/oh-my-zsh.git $ZSH
-    echo "Done installing oh-my-zsh."
+    git clone https://github.com/zplug/zplug $ZPLUG_HOME
+    source $ZPLUG_HOME/init.zsh && zplug update --self
+
+    echo "Zplug has been installed"
 fi
 
-# Load oh-my-zsh
-source $ZSH/oh-my-zsh.sh
+# Source zplug package manager script
+source "$ZPLUG_HOME/init.zsh"
+
+# Load plugins
+zplug load
 
 # ----------------- USER CONFIGURATION ----------------- 
 
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=$(which python3)
-source /usr/local/bin/virtualenvwrapper.sh
+source /usr/bin/virtualenvwrapper.sh
 
 # Pyenv
 export PYENV_ROOT=$HOME/.pyenv
