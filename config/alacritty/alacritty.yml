@@ -37,10 +37,7 @@ window:
   # Values for `decorations`:
   #     - full: Borders and title bar
   #     - none: Neither borders nor title bar
-  decorations: full
-
-  # When true, alacritty starts maximized.
-  start_maximized: false
+  decorations: none
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -93,26 +90,26 @@ font:
   # Normal (roman) font face
   normal:
     # family: Source Code Pro for Powerline
-    family: DejaVu Sans Mono
+    family: "Noto Sans Mono"
     # The `style` can be specified to pick a specific face.
     #style: Regular
 
   # Bold font face
-  bold:
+  # bold:
     # family: Source Code Pro for Powerline
-    family: DejaVu Sans Mono
+    # family: DejaVu Sans Mono
     # The `style` can be specified to pick a specific face.
     #style: Bold
 
   # Italic font face
-  italic:
+  # italic:
     # family: Source Code Pro for Powerline
-    family: DejaVu Sans Mono
+    # family: DejaVu Sans Mono
     # The `style` can be specified to pick a specific face.
     #style: Italic
 
   # Point size
-  size: 12.0
+  size: 10.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -127,21 +124,14 @@ font:
     x: 0
     y: 0
 
-# Display the time it takes to redraw each frame.
-render_timer: false
-
-# Keep the log file after quitting Alacritty.
-persistent_logging: false
-
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
 # Colors (Tomorrow Night Bright)
 colors:
-  # Default colors
   primary:
-    background: '0x282828'
-    foreground: '0xfbf1c7'
+    background: '0x1d2021'
+    foreground: '0xd5c4a1'
 
     # Bright and dim foreground colors
     #
@@ -156,52 +146,60 @@ colors:
   # Colors which should be used to draw the terminal cursor. If these are unset,
   # the cursor color will be the inverse of the cell color.
   cursor:
-    text: '0xbdae93'
-    cursor: '0x665c54'
+    text: '0x1d2021'
+    cursor: '0xd5c4a1'
+
+  # Selection colors
+  #
+  # Colors which should be used to draw the selection area. If selection
+  # background is unset, selection color will be the inverse of the cell colors.
+  # If only text is unset the cell text color will remain the same.
+  #selection:
+  #  text: '0xeaeaea'
+  #  background: '0x404040'
 
   # Normal colors
   normal:
-    black:   '0x282828'
-    red:     '0xcc241d'
-    green:   '0x98971a'
-    yellow:  '0xd79921'
-    blue:    '0x458588'
-    magenta: '0xb16286'
-    cyan:    '0x689d6a'
-    white:   '0xa89984'
-
-  # Bright colors
-  bright:
-    black:   '0x928374'
+    black:   '0x1d2021'
     red:     '0xfb4934'
     green:   '0xb8bb26'
     yellow:  '0xfabd2f'
     blue:    '0x83a598'
     magenta: '0xd3869b'
     cyan:    '0x8ec07c'
-    white:   '0xebdbb2'
+    white:   '0xd5c4a1'
+
+  # Bright colors
+  bright:
+    black:   '0x665c54'
+    red:     '0xfb4934'
+    green:   '0xb8bb26'
+    yellow:  '0xfabd2f'
+    blue:    '0x83a598'
+    magenta: '0xd3869b'
+    cyan:    '0x8ec07c'
+    white:   '0xfbf1c7'
 
   # Dim colors
   #
   # If the dim colors are not set, they will be calculated automatically based
   # on the `normal` colors.
-  # dim:
-    # black:   '0x333333'
-    # red:     '0xf2777a'
-    # green:   '0x99cc99'
-    # yellow:  '0xffcc66'
-    # blue:    '0x6699cc'
-    # magenta: '0xcc99cc'
-    # cyan:    '0x66cccc'
-    # white:   '0xdddddd'
 
   # Indexed Colors
   #
   # The indexed colors include all colors from 16 to 256.
   # When these are not set, they're filled with sensible defaults.
-  #indexed_colors:
-  #  - { index: 16, color: '0x000000' }
-
+  #
+  # Example:
+  #   `- { index: 16, color: '0xff00ff' }`
+  #
+  indexed_colors:
+    - { index: 16, color: '0xfe8019' }
+    - { index: 17, color: '0xd65d0e' }
+    - { index: 18, color: '0x3c3836' }
+    - { index: 19, color: '0x504945' }
+    - { index: 20, color: '0xbdae93' }
+    - { index: 21, color: '0xebdbb2' }
 # Visual Bell
 #
 # Any time the BEL code is received, Alacritty "rings" the visual bell. Once
