@@ -1,7 +1,11 @@
 # ----------------- ALIASES -----------------
 
+# Exa instead of ls
+alias ls="exa"
+
 # Teminal
 alias la="ls -la"
+alias ll="ls -l"
 
 # Zsh
 alias zshconf="vim ~/.config/zsh/.zshrc"
