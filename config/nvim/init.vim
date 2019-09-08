@@ -31,6 +31,7 @@ Plug 'jreybert/vimagit' " Modal git editing with <leader>g
 
 " Auto-completion
 Plug 'ludovicchabant/vim-gutentags' " Automatically create ctag files
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Completion framework 
 
 " Language Server Protocol
 Plug 'autozimu/LanguageClient-neovim', {
