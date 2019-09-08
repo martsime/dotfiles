@@ -10,7 +10,6 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'flazz/vim-colorschemes' " Colorschemes
 Plug 'itchyny/lightline.vim' " Ligthline statusline
 Plug 'w0rp/ale' " Asynchronous lint engine
-Plug 'lilydjwg/colorizer' " Color previewer
 
 " Navigation
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy file searching
@@ -31,10 +30,6 @@ Plug 'airblade/vim-gitgutter' " Show git diff in number column
 Plug 'jreybert/vimagit' " Modal git editing with <leader>g
 
 " Auto-completion
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Asynchronous completion framework for neovim
-Plug 'zchee/deoplete-jedi' " Jedi as a completion source for deoplete
-
-" Tools
 Plug 'ludovicchabant/vim-gutentags' " Automatically create ctag files
 
 " Language Server Protocol
@@ -59,7 +54,7 @@ set background=dark
 colorscheme gruvbox
 
 " Remove background
-" hi! Normal ctermbg=NONE guibg=NONE
+hi! Normal ctermbg=NONE guibg=None
 
 " Show line numbers
 set number
