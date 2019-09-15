@@ -208,8 +208,8 @@ let g:gutentags_file_list_command = 'rg --files'
 "" Gitgutter
 
 " Remaps
-nmap <leader>ga <Plug>GitGutterStageHunk
-nmap <leader>gu <Plug>GitGutterUndoHunk
+nmap <leader>ga <Plug>(GitGutterStageHunk)
+nmap <leader>gu <Plug>(GitGutterUndoHunk)
 
 " Update sign in column every 200 ms
 set updatetime=200
