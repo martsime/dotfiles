@@ -130,6 +130,10 @@ nnoremap <C-H> <C-W><C-H>
 " Remap open vertical split
 nnoremap <silent> <leader>v :vsp<CR>
 
+" System clipboard
+nmap <leader>y "+y
+vmap <leader>y "+y
+
 
 """ PERFORMANCE
 
