@@ -49,6 +49,9 @@ xorg-server
 # Xorg init tool (startx)
 xorg-init
 
+# Keybindings
+xbindkeys
+
 # Tiling window manager
 i3-gaps
 
