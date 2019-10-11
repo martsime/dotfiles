@@ -10,6 +10,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'flazz/vim-colorschemes' " Colorschemes
 Plug 'itchyny/lightline.vim' " Ligthline statusline
 Plug 'w0rp/ale' " Asynchronous lint engine
+Plug 'sheerun/vim-polyglot'  " Syntax highlighting for many languages
 
 " Navigation
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy file searching
@@ -17,6 +18,7 @@ Plug 'junegunn/fzf.vim' " Asynchronous file/tag search
 Plug 'francoiscabrol/ranger.vim' " Use ranger as a file explorer
 Plug 'rbgrouleff/bclose.vim' " Dependency of ranger.vim
 Plug 'christoomey/vim-tmux-navigator' " Navigate between tmux and vim with <C>+hjkl
+Plug 'airblade/vim-rooter'  " Opens vim from git root
 
 " Editing
 Plug 'tpope/vim-commentary' " Changes to comment with 'gc'
@@ -103,8 +105,10 @@ set expandtab
 " Smartwrapping of overflowing text is indented correctly
 set breakindent
 
-" Indent size for js files
+" Indent size for different file types
 autocmd Filetype javascript setlocal ts=2 sw=2 sts=0 expandtab
+autocmd Filetype html setlocal ts=2 sw=2 sts=0 expandtab
+autocmd Filetype c setlocal ts=2 sw=2 sts=0 expandtab
 
 
 """ KEYBINDINGS
