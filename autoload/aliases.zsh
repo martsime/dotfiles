@@ -20,3 +20,12 @@ alias tma="tmux a -t"
 alias tmn="tmux new -s"
 alias tml="tmux ls"
 alias tmk="tmux kill-session -t"
+
+# Make
+alias mk="make"
+alias mc="make clean"
+
+# Git
+alias gs="git status"
+alias gco="git checkout"
+alias gcob="git checkout -B"
