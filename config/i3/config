@@ -16,6 +16,10 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec alacritty # TODO: Change to $TERMINAL after env varaibles is set
 
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q sset Master 5%+ unmute #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q sset Master 5%- unmute #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id amixer -q sset Master toggle # mute sound
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
