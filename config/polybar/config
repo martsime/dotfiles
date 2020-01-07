@@ -113,6 +113,18 @@ bar-used-empty = ─
 bar-used-empty-font = 6
 bar-used-empty-foreground = #444444
 
+[module/filesystem]
+type = internal/fs
+mount-0 = /
+mount-1 = /home
+
+interval = 10
+
+fixed-valued = true
+
+format-mounted = <label-mounted>
+label-mounted = %{F#98971a}%mountpoint%%{F-}: %free%
+
 [module/audio]
 type = internal/pulseaudio
 
