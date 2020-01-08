@@ -32,12 +32,11 @@ bindsym $mod+d exec dmenu_run
 
 for_window [class="^.*"] border pixel 2
 gaps inner 8
-gaps outer 2
 
 # #---Start External Scripts---# #
 
 # Composite manager
-exec --no-startup-id xcompmgr
+exec_always --no-startup-id picom -b --config $XDG_CONFIG_HOME/picom/picom.conf
 # Set the backround
 exec --no-startup-id setbg
 # Start polybar
@@ -59,7 +58,7 @@ set $white #ffffff
 
 # green gruvbox
 # class                 border|backgr|text|indicator|child_border
-client.focused          $green $green $darkgray $purple $darkgray
+client.focused          $green $green $darkgray $purple $green
 client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
 client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
 client.urgent           $red $red $white $red $red
@@ -166,11 +165,6 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym h resize shrink width 10 px or 10 ppt
         bindsym j resize grow height 10 px or 10 ppt
         bindsym k resize shrink height 10 px or 10 ppt
@@ -189,3 +183,5 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+# vim:ft=i3config
