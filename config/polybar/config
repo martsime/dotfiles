@@ -167,8 +167,24 @@ layout-icon-1 = no;NB
 
 [module/date]
 type = internal/date
-date =  %%{F#99}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M%%{F-}
-date-alt = %%{F#fff}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
+interval = 5
+format-padding = 2
+
+format = <label>
+label = %date%
+date =  %d/%m
+date-alt =  Week %V %d/%m/%y
+date-underline = #123123
+
+[module/time]
+type = internal/date
+interval = 5
+format-padding = 0
+
+format = <label>
+label = %time%
+time =  %H:%M:%S
+date-underline = #123123
 
 [module/i3]
 type = internal/i3
