@@ -1,4 +1,4 @@
 #!/bin/sh
 
 # Sets the background
-xwallpaper --maximize ~/.config/wallpaper.jpg
+xwallpaper --stretch ~/.config/wallpaper.jpg
