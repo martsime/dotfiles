@@ -9,9 +9,9 @@ primary = #d79921
 secondary = #98971a
 alert = #cc241d
 
-green = #aaff77
-yellow = #fabd2f
-red = #fb4934
+green = ${self.secondary}
+yellow = ${self.primary}
+red = ${self.alert}
 
 invisible = #ffffffff
 
@@ -19,46 +19,47 @@ invisible = #ffffffff
 monitor = DP-0
 width = 100%
 
-background = #00000000
+background = #77000000
 foreground = #ccffffff
 
 line-color = ${self.background}
 
-font-0 = "NotoSans Nerd Font:size=11:style=Regular;5"
+font-0 = "NotoSans Nerd Font:size=11:style=Regular;0"
 font-1 = "unifont:size=6;0"
 font-2 = "unifont:size=10;0"
-font-3 = "Termsynu:size=8:antialias=false;0"
+font-3 = "Termsynu:size=10:antialias=false;0"
 font-4 = "NotoSans Nerd Font:size=11:style=Regular;1"
 
 [bar/top]
 inherit = bar/base
 
 bottom = false
-height = 24
+height = 32
 
-line-size = 16
+line-size = 2
 spacing = 2
 padding-right = 4
 padding-left = 4
 
-modules-right = audio xkeyboard date
+modules-left = i3
+modules-right = audio xkeyboard date time
 
 [bar/bottom]
 inherit = bar/base
 
-font-0 = "NotoSans Nerd Font:size=11:style=Regular;-2"
+font-0 = "NotoSans Nerd Font:size=11:style=Regular;2"
 bottom = true
-height = 32
+height = 34
 
 line-size = 2
 
 spacing = 3
 padding-right = 4
+padding-left = 2
 module-margin-left = 0
 module-margin-right = 6
 
-
-modules-left = i3
+modules-left = filesystem
 modules-right = cpu memory
 
 [module/cpu]
@@ -92,7 +93,6 @@ ramp-coreload-7 = █
 ramp-coreload-7-font = 3
 ramp-coreload-7-foreground = ${colors.red}
 
-
 [module/memory]
 type = internal/memory
 interval = 1.0
@@ -105,12 +105,12 @@ bar-used-foreground-1 = ${colors.green}
 bar-used-foreground-2 = ${colors.yellow}
 bar-used-foreground-3 = ${colors.red}
 bar-used-indicator = |
-bar-used-indicator-font = 6
+bar-used-indicator-font = 4
 bar-used-indicator-foreground = #ff
 bar-used-fill = ─
-bar-used-fill-font = 6
+bar-used-fill-font = 4
 bar-used-empty = ─
-bar-used-empty-font = 6
+bar-used-empty-font = 4
 bar-used-empty-foreground = #444444
 
 [module/filesystem]
@@ -140,7 +140,7 @@ headphone-id = 9
 mapped = true
 interval = 5
 
-format-volume = <ramp-volume> <label-volume>
+format-volume = <ramp-volume><label-volume>
 
 label-muted = 婢 muted
 label-muted-foreground = #66
@@ -149,7 +149,6 @@ ramp-volume-0 = 奄
 ramp-volume-1 = 奔
 ramp-volume-2 = 墳
 ramp-volume-foreground = #ffffff
-ramp-volume-font = 1
 
 ramp-headphones-0 = 
 ramp-headphones-1 = 
@@ -160,7 +159,7 @@ type = internal/xkeyboard
 format = <label-layout>
 format-padding = 2
 
-label-layout =   %icon%
+label-layout =   %icon%
 
 layout-icon-0 = us;US
 layout-icon-1 = no;NB
