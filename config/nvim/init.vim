@@ -11,6 +11,7 @@ Plug 'flazz/vim-colorschemes' " Colorschemes
 Plug 'itchyny/lightline.vim' " Ligthline statusline
 Plug 'w0rp/ale' " Asynchronous lint engine
 Plug 'sheerun/vim-polyglot'  " Syntax highlighting for many languages
+Plug 'rust-lang/rust.vim' " Syntax highlighting and formatting for Rust
 
 " Navigation
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy file searching
