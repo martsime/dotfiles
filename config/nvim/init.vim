@@ -200,6 +200,9 @@ nnoremap <silent> <leader>a :ArgWrap<Cr>
 " Use trailing comma on last argument
 let g:argwrap_tail_comma = 1
 
+" Rust
+let g:rustfmt_autosave = 1
+
 
 "" Ale
 let g:ale_fixers = {
