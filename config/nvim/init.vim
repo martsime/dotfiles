@@ -68,6 +68,9 @@ hi! Normal ctermbg=NONE guibg=None
 " Show line numbers
 set number
 
+" Highlight current line
+set cursorline
+
 " Start scrolling when X lines from end of screen
 set scrolloff=10
 
