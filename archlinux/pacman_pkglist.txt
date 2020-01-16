@@ -47,7 +47,7 @@ xorg
 xorg-server
 
 # Xorg init tool (startx)
-xorg-init
+xorg-xinit
 
 # Keybindings
 xbindkeys
