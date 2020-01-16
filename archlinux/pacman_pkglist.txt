@@ -12,6 +12,15 @@ base
 # Packages required for building/compiling new packages
 base-devel
 
+# Sound
+pulseaudio
+pulseaudio-alsa
+alsa-utils
+
+# Bluetooth
+pulseaudio-bluetooth
+bluez
+bluez-utils
 
 # --- Terminal tools ---
 
@@ -52,14 +61,26 @@ xorg-xinit
 # Keybindings
 xbindkeys
 
+# Compositor
+picom
+
 # Tiling window manager
 i3-gaps
 
 # Program launcher
 dmenu
 
+# Window bars
+polybar
+
+
+# --- Programs ---
+
 # Image viewer
 feh
+
+# Setting wallpaper
+xwallpaper
 
 
 # --- Developer tools ---
@@ -88,3 +109,6 @@ postgresql
 
 # Web browser
 firefox
+
+# Sound controls
+pavucontrol
