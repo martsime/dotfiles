@@ -48,6 +48,9 @@ openssh
 # Activity monitor
 htop
 
+# Interact with X Server
+wmctrl
+
 
 # --- GUI ---
 
