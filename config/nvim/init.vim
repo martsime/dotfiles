@@ -224,6 +224,19 @@ let g:deoplete#enable_at_startup = 1
 "" Gutentags
 let g:gutentags_file_list_command = 'rg --files'
 
+"" Pandoc
+" Disable folding of sections and automatic directory change
+let g:pandoc#modules#disabled = ["folding", "chdir"]
+
+"" Nvim-r
+" Enable the use of library(colorout) for colorized R terminals
+let R_in_buffer = 1
+
+" R output is highlighted with current colorscheme
+let g:rout_follow_colorscheme = 1
+
+" R commands in R output are highlighted
+let g:Rout_more_colors = 1
 
 "" Gitgutter
 
