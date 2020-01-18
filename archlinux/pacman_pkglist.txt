@@ -70,8 +70,8 @@ picom
 # Tiling window manager
 i3-gaps
 
-# Program launcher
-dmenu
+# Better program launcher
+rofi
 
 # Window bars
 polybar
