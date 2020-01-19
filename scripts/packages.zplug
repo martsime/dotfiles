@@ -1,3 +1,18 @@
 # Load theme file
 zplug "mafredri/zsh-async", from:github
 zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
+
+# Auto completion
+zplug "zsh-users/zsh-autosuggestions"
+
+# Syntax highlighting
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
+# History search
+zplug "zsh-users/zsh-history-substring-search"
+
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+# Extra completion for zsh
+zplug "zsh-users/zsh-completions"
