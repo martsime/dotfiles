@@ -28,9 +28,6 @@ fi
 # Swap ctrl key with caps lock
 setxkbmap -option ctrl:swapcaps
 
-# Swap left alt with super
-setxkbmap -option altwin:swap_alt_win
-
 # Bind keyboard shortcuts
 xbindkeys
 
