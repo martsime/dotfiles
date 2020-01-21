@@ -16,7 +16,7 @@ red = ${self.alert}
 invisible = #ffffffff
 
 [bar/base]
-monitor = DP-0
+monitor = eDP1
 width = 100%
 
 background = #77000000
@@ -120,7 +120,6 @@ bar-used-empty-foreground = #444444
 [module/filesystem]
 type = internal/fs
 mount-0 = /
-mount-1 = /home
 
 interval = 10
 
