@@ -48,7 +48,7 @@ scrolling:
 
   # Number of lines the viewport will move for every line scrolled when
   # scrollback is enabled (history > 0).
-  multiplier: 0
+  multiplier: 10
 
   # Faux Scrolling
   #
