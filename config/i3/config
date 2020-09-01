@@ -33,6 +33,9 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # Start rofi (program launcher)
 bindsym $mod+o exec --no-startup-id rofi -show run
 
+# Change keyboard layout
+bindsym $mod+x exec --no-startup-id $HOME/.dotfiles/scripts/change_keyboard_layout.sh
+
 
 for_window [class="^.*"] border pixel 2
 gaps inner 8
@@ -46,7 +49,7 @@ exec_always --no-startup-id picom -b --config $XDG_CONFIG_HOME/picom/picom.conf
 # Set the backround
 exec --no-startup-id setbg
 # Start polybar
-exec_always --no-startup-id $HOME/.config/polybar/init.zsh
+exec_always --no-startup-id $HOME/.dotfiles/config/polybar/init.zsh
 
 # set primary gruvbox colorscheme colors
 set $bg #282828

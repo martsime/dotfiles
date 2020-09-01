@@ -6,4 +6,6 @@ then
 	setxkbmap no
 else
 	setxkbmap us
-fi 
+fi
+
+source $DOTFILES/scripts/key_remap.sh
