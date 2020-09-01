@@ -1,5 +1,5 @@
 export DOTREPO=$HOME/.dotfiles
-export PATH=/usr/local/bin:/usr/bin:/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/$HOME/.local/bin
 
 # Add all scripts from dotfiles to path
 export PATH="$PATH:$DOTREPO/tools"
@@ -44,7 +44,7 @@ done
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=$(which python3)
-source /usr/bin/virtualenvwrapper.sh
+source $HOME/.local/bin/virtualenvwrapper.sh
 
 # Pyenv
 export PYENV_ROOT=$HOME/.pyenv
