@@ -21,5 +21,7 @@ if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi
 
+source $HOME/.dotfiles/scripts/key_remap.sh
+
 # Start Xorg instance with i3 as window manager
 exec i3
