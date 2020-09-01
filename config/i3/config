@@ -39,6 +39,8 @@ gaps inner 8
 
 # #---Start External Scripts---# #
 
+# Remap keys
+exec_always --no-startup-id $HOME/.dotfiles/scripts/key_remap.sh
 # Composite manager
 exec_always --no-startup-id picom -b --config $XDG_CONFIG_HOME/picom/picom.conf
 # Set the backround
