@@ -39,6 +39,9 @@ bindsym $mod+x exec --no-startup-id $HOME/.dotfiles/scripts/change_keyboard_layo
 # Lock screen
 bindsym $mod+Shift+x exec --no-startup-id betterlockscreen -l dim
 
+# Screenshot
+bindsym $mod+i exec --no-startup-id gnome-screenshot -i
+
 
 for_window [class="^.*"] border pixel 2
 gaps inner 8
