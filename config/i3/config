@@ -34,7 +34,7 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+o exec --no-startup-id rofi -show run
 
 # Change keyboard layout
-bindsym $mod+x exec --no-startup-id $HOME/.dotfiles/scripts/change_keyboard_layout.sh
+bindsym Ctrl+Space exec --no-startup-id $HOME/.dotfiles/scripts/change_keyboard_layout.sh
 
 # Lock screen
 bindsym $mod+Shift+x exec --no-startup-id betterlockscreen -l dim
