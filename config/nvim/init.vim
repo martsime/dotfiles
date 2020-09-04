@@ -12,6 +12,7 @@ Plug 'itchyny/lightline.vim' " Ligthline statusline
 Plug 'w0rp/ale' " Asynchronous lint engine
 Plug 'sheerun/vim-polyglot'  " Syntax highlighting for many languages
 Plug 'rust-lang/rust.vim' " Syntax highlighting and formatting for Rust
+Plug 'neomake/neomake', {'for': ['latex', 'tex', 'plaintex']} " Linting for latex documents
 
 " R-lang
 Plug 'jalvesaq/nvim-r' " Plugin for R lang
@@ -38,6 +39,7 @@ Plug 'airblade/vim-gitgutter' " Show git diff in number column
 Plug 'jreybert/vimagit' " Modal git editing with <leader>g
 
 " Auto-completion
+Plug 'lervag/vimtex'  " LaTeX completion
 Plug 'ludovicchabant/vim-gutentags' " Automatically create ctag files
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Completion framework 
 
@@ -285,3 +287,36 @@ nnoremap <silent> <Leader>R :call LanguageClient_textDocument_references()<CR>
 
 " Use LanguageClient for gq formatting
 set formatexpr=LanguageClient#textDocument_rangeFormatting_sync()
+
+"""" vimtex
+" Start vim client server for backwards search from PDF file
+if empty(v:servername) && exists('*remote_startserver')
+  call remote_startserver('VIM')
+endif
+
+let g:vimtex_compiler_latexmk = {
+    \ 'backend' : 'nvim',
+    \ 'background' : 1,
+    \ 'build_dir' : '',
+    \ 'callback' : 1,
+    \ 'continuous' : 0,
+    \ 'executable' : 'latexmk',
+    \ 'options' : [
+    \   '-verbose',
+    \   '-file-line-error',
+    \   '-synctex=1',
+    \   '-interaction=nonstopmode',
+    \   '-shell-escape',
+    \ ],
+    \}
+
+" Disable custom warnings based on regexp
+let g:vimtex_quickfix_ignore_filters = [
+      \ 'Font shape declaration',
+      \]
+
+" Program used to preview output pdf
+let g:vimtex_view_method = 'zathura'
+
+" Flavor of tex to use
+let g:tex_flavor = "tex"
