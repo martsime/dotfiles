@@ -80,15 +80,15 @@ bindsym $mod+Shift+Return exec gtk-launch $(xdg-settings get default-web-browser
 set_from_resource $rofiTheme rofi.theme /etc/regolith/styles/lascaille/rofi.rasi
 
 ## Launch // Application // <> Space ##
-set_from_resource $i3-wm.program.launcher.app i3-wm.program.launcher.app rofi -show drun -theme $rofiTheme
+set_from_resource $i3-wm.program.launcher.app i3-wm.program.launcher.app rofi -sort -show drun -theme $rofiTheme
 bindsym $mod+space exec $i3-wm.program.launcher.app
 
 ## Launch // Command // <><Shift> Space ##
-set_from_resource $i3-wm.program.launcher.cmd i3-wm.program.launcher.cmd rofi -show run -theme $rofiTheme
+set_from_resource $i3-wm.program.launcher.cmd i3-wm.program.launcher.cmd rofi -sort -show run -theme $rofiTheme
 bindsym $mod+Shift+space exec $i3-wm.program.launcher.cmd
 
 ## Navigate // Window by Name // <><Ctrl> Space ##
-set_from_resource $i3-wm.program.launcher.window i3-wm.program.launcher.window rofi -show window -theme $rofiTheme
+set_from_resource $i3-wm.program.launcher.window i3-wm.program.launcher.window rofi -sort -show window -theme $rofiTheme
 bindsym $mod+Ctrl+space exec $i3-wm.program.launcher.window
 
 ## Launch // This Dialog // <><Shift> ? ##
@@ -96,7 +96,7 @@ set_from_resource $i3-wm.program.help i3-wm.program.help /usr/bin/remontoire-tog
 bindsym $mod+Shift+question exec --no-startup-id $i3-wm.program.help
 
 ## Launch // File Search // <><Alt> Space ##
-set_from_resource $i3-wm.program.file_search i3-wm.program.file_search rofi -show find -modi find:/usr/share/rofi/modi/finder.sh
+set_from_resource $i3-wm.program.file_search i3-wm.program.file_search rofi -sort -show find -modi find:/usr/share/rofi/modi/finder.sh
 bindsym $mod+$alt+space exec $i3-wm.program.file_search
 
 ###############################################################################
