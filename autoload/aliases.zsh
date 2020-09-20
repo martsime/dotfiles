@@ -20,6 +20,7 @@ alias tma="tmux a -t"
 alias tmn="tmux new -s"
 alias tml="tmux ls"
 alias tmk="tmux kill-session -t"
+alias tmconf="vim ~/.config/tmux/.tmux.conf"
 
 # Make
 alias mk="make"
