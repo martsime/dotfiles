@@ -40,15 +40,21 @@ for file in $AUTOLOAD/*.zsh; do
 done
 
 # ----------------- USER CONFIGURATION ----------------- 
+# Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=$(which python3)
-source $HOME/.local/bin/virtualenvwrapper.sh
+export VIRTUALENVWRAPPER_PYTHON=$(pyenv which python3)
+source /usr/local/bin/virtualenvwrapper.sh
 
-# Pyenv
-export PYENV_ROOT=$HOME/.pyenv
-export PATH="$PYENV_ROOT/bin:$PATH"
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# Poetry
+export PATH="$PATH:$HOME/.poetry/bin"
 
 # Vim
 export VIM="" # This is needed for python host to load correctly in nvim
@@ -57,10 +63,9 @@ export VIM="" # This is needed for python host to load correctly in nvim
 export FZF_DEFAULT_COMMAND='rg --smart-case --files --hidden --follow --glob "!.git/*"'
 
 # Nodejs version manager
-[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
-source /usr/share/nvm/nvm.sh
-source /usr/share/nvm/bash_completion
-source /usr/share/nvm/install-nvm-exec
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Bibtex
 export PATH="$PATH:/usr/bin/vendor_perl"
@@ -74,3 +79,9 @@ export GIT_EDITOR="nvim"
 if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
     exec startx
 fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/martsime/google-cloud-sdk/path.zsh.inc' ]; then . '/home/martsime/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/martsime/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/martsime/google-cloud-sdk/completion.zsh.inc'; fi
