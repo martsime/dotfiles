@@ -1,0 +1,44 @@
+{
+    "workbench.colorTheme": "One Dark Pro",
+    "vim.handleKeys": {
+        "<C-w>": false,
+        "<C-e>": false,
+        "<C-d>": true,
+        "<C-k>": false,
+        "<C-s>": false,
+    },
+    "editor.minimap.enabled": false,
+    "window.zoomLevel": 0,
+    "rust-analyzer.lens.implementations": false,
+    "editor.formatOnSave": true,
+    "python.formatting.blackArgs": [
+        "--line-length=80"
+    ],
+    "svelte.plugin.typescript.enable": false,
+    "editor.detectIndentation": false,
+    "[css]": {
+        "editor.tabSize": 2
+    },
+    "[html]": {
+        "editor.tabSize": 2
+    },
+    "[javascript]": {
+        "editor.tabSize": 2
+    },
+    "[svelte]": {
+        "editor.tabSize": 2,
+    },
+    "[json]": {
+        "editor.tabSize": 2,
+    },
+    "[svg]": {
+        "editor.tabSize": 2,
+    },
+    "extensions.ignoreRecommendations": false,
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+}
