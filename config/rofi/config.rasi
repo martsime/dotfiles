@@ -1,4 +1,5 @@
 configuration {
     matching: "fuzzy";
+    sorting-method: "fzf";
+    sorting: true;
 }
-@import "/usr/share/rofi/themes/gruvbox-dark.rasi"
