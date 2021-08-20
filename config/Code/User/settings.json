@@ -1,5 +1,4 @@
 {
-    "workbench.colorTheme": "One Dark Pro",
     "vim.handleKeys": {
         "<C-w>": false,
         "<C-e>": false,
@@ -14,8 +13,6 @@
     "python.formatting.blackArgs": [
         "--line-length=80"
     ],
-    "svelte.plugin.typescript.enable": false,
-    "editor.detectIndentation": false,
     "[css]": {
         "editor.tabSize": 2
     },
@@ -27,6 +24,7 @@
     },
     "[svelte]": {
         "editor.tabSize": 2,
+        "editor.defaultFormatter": "svelte.svelte-vscode"
     },
     "[json]": {
         "editor.tabSize": 2,
@@ -35,10 +33,25 @@
         "editor.tabSize": 2,
     },
     "extensions.ignoreRecommendations": false,
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "workbench.colorTheme": "One Dark Pro",
+    "rust-analyzer.assist.importPrefix": "crate",
+    "editor.semanticTokenColorCustomizations": {
+        "[One Dark Pro]": {
+            "enabled": true,
+            "rules": {
+                "*.mutable": {
+                    "bold": true,
+                    "underline": false
+                }
+            }
         }
-    ],
+    },
+    "svelte.enable-ts-plugin": true,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
 }
