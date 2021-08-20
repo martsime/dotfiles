@@ -1,4 +1,0 @@
-#!/bin/sh
-
-# Sets the background
-xwallpaper --stretch ~/.dotfiles/wallpaper.jpg
