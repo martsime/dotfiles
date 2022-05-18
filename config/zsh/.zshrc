@@ -85,4 +85,5 @@ fi
 if [ -f '/home/martsime/google-cloud-sdk/path.zsh.inc' ]; then . '/home/martsime/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/martsime/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/martsime/google-cloud-sdk/completion.zsh.inc'; fi
+source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
