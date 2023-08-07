@@ -21,7 +21,3 @@ else
     exit 1
 fi
 
-# Install vim plugins
-echo "${BOLDSTART}Installing vim plugins\n${BOLDEND}"
-sleep 1
-nvim -e +PlugInstall +qall 2> /dev/null
