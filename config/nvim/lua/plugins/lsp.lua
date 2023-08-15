@@ -5,6 +5,11 @@ return {
       servers = {
         pyright = {},
         ruff_lsp = {},
+        rust_analyzer = {
+          settings = {
+            inlay_hints = true,
+          },
+        },
       },
       autoformat = true,
     },
