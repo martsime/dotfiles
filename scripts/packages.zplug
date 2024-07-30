@@ -16,3 +16,6 @@ bindkey '^[[B' history-substring-search-down
 
 # Extra completion for zsh
 zplug "zsh-users/zsh-completions"
+
+# Auto activate virtual environment on navigate
+zplug "Skylor-Tang/auto-venv", use:auto-venv.zsh, from:github, at:main
