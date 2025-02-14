@@ -6,7 +6,7 @@ export PATH="$PATH:$DOTREPO/tools"
 
 # ----------------- ZPLUG -----------------
 # Path to zplug
-export ZPLUG_HOME=$XDG_CONFIG_HOME/zplug
+export ZPLUG_HOME=$DOTREPO/config/zplug
 
 # Cache zplug plugins in order to improve zsh startup time
 export ZPLUG_USE_CACHE=true
@@ -40,22 +40,9 @@ for file in $AUTOLOAD/*.zsh; do
 done
 
 # ----------------- USER CONFIGURATION ----------------- 
-# Pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-
-# Virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-source /usr/local/bin/virtualenvwrapper.sh
-
+#
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
-
-# Poetry
-export PATH="$PATH:$HOME/.poetry/bin"
 
 # Vim
 export VIM="" # This is needed for python host to load correctly in nvim
@@ -68,22 +55,5 @@ export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Bibtex
-export PATH="$PATH:/usr/bin/vendor_perl"
-
 # Git
 export GIT_EDITOR="nvim"
-
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Start Xorg on Arch
-if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
-    exec startx
-fi
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/martsime/google-cloud-sdk/path.zsh.inc' ]; then . '/home/martsime/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
