@@ -1,7 +1,7 @@
 # ----------------- ALIASES -----------------
 
 # Exa instead of ls
-alias ls="exa"
+alias ls="eza"
 
 # Teminal
 alias la="ls -la"
